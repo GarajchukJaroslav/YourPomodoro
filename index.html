@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>YourPomodoro</title>
+</head>
+
+<body>
+    <aside class="aside">
+        <nav class="aside__nuv">
+            <ul class="aside__nuv-list">
+                <li class="aside__nuv-item" data-aside="0">Помодоро</li>
+                <li class="aside__nuv-item" data-aside="1">Прогресс</li>
+                <li class="aside__nuv-item" data-aside="2">Мозговой штурм</li>
+                <li class="aside__nuv-item" data-aside="3">Настройки</li>
+            </ul>
+        </nav>
+    </aside>
+    <section class="main">
+        <div class="container main-container">
+            <div class="main__pomodoro">
+                <div class="main__img-wrapper" id="main-img--wrapper">
+                    <img src="./img/pngwing.com.png" class="main__pomodoro-img" draggable="false">
+                </div>
+                <div class="main__modal-wrapper hidden">
+                    <div class="main__modal">
+                        <div class="main__modal-top">
+                            <h1 class="main__modal-title">Список проектов:</h1>
+                            <button class="main__modal-close"></button>
+                        </div>
+                        <ul class="main__modal-list">
+                            <li class="main__modal-empty">Список проектов пуст...</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main__done-wrapper hidden">
+                    <div class="main__done"></div>
+                </div>
+                <div class="main__current-project hidden">
+                    <h2 class="main__current-title"></h2>
+                    <button class="main__change-current">
+                        <img class="main__change-img" src="./img/pencil.svg">
+                    </button>
+                </div>
+                <div class="main__btns-wrapper">
+                    <button class="main__pomodoro-startBtn">Start working!</button>
+                </div>
+                <div class="main__pomodoro-timer">25:00</div>
+                <div class="main__lists-wrapper">
+                    <div class="main__double-list">
+                        <ul class="main__pomodoro-list">
+                            <li class="main__pomodoro-item">
+                                <div class="main__pomodoro-div"></div>
+                            </li>
+                            <li class="main__pomodoro-item">
+                                <div class="main__pomodoro-div"></div>
+                            </li>
+                            <li class="main__pomodoro-item">
+                                <div class="main__pomodoro-div"></div>
+                            </li>
+                            <li class="main__pomodoro-item">
+                                <div class="main__pomodoro-div"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="progress">
+        <div class="container progress-container">
+            <div class="progress__content">
+                <div class="progress__top-wrapper">
+                    <h1 class="example-center white-text">Прогресс</h1>
+                    <button class="pogress__add-btn"></button>
+                </div> 
+                <div class="progress__modal-wrapper hidden">
+                    <div class="progress__add-modal">
+                        <div class="modal__content-wrapper">
+                            <h1 class="progress__modal-title">Создание нового проекта</h1>
+                            <div class="modal__item-wrapper">
+                                <h3 class="progress__modal-name">Введите название проекта:</h3>
+                                <input class="modal__input" id="name-input" type="text" value="My Project">
+                            </div>
+                            <div class="modal__item-wrapper">
+                                <h3 class="progress__modal-name">Введите дату начала:</h3>
+                                <input class="modal__input data-input" type="date" id="start--date-input">
+                            </div>
+                            <div class="modal__item-wrapper">
+                                <h3 class="progress__modal-name">Введите дату завершения:</h3>
+                                <input class="modal__input data-input" type="date" id="end--date-input">
+                            </div>
+                            <div class="modal__item-wrapper">
+                                <h3 class="progress__modal-name">Комментарий к проекту:</h3>
+                                <textarea class="modal__input textarea" id="comment-input" cols="5" rows="8" placeholder="Some comments..."></textarea>
+                            </div>
+                        </div>
+                        <button class="modal__create-btn">
+                            Create project
+                        </button>
+                    </div>
+                </div>
+                <div class="progress__projects-wrapper">
+                    <div class="progress__projects-empty empty-white-text">Пока ничего нет</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="brain">
+        <div class="container brain-container">
+            <div class="brain__content">
+                <h1 class="brain__title">Мозговой штурм</h1>
+                <textarea name="brain__name" class="center brain__textarea" cols="30" rows="10" placeholder="Привет, напиши здесь свой текст!"></textarea>
+                <a class="brain__save-link">Сохранить</a>
+            </div>
+        </div>
+    </section>
+    <section class="settings">
+        <div class="container settings-container">
+            <div class="settings__content">
+                <h1 class="example-center">Настройки</h1>
+                <div class="settings__parms-wrapper example-center">
+                    <ul class="settings__paexample-centerrams">
+                        <li class="settings__params-item">
+                            <button type="reset" class="settings__params-btn" data-type="done-list">Выполненные задачи</button>
+                        </li>
+                        <li class="settings__params-item settings__params-item--last">
+                            <button type="reset" class="settings__params-btn" data-type="get-vip">Получить полную версию</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="settings__done-modal hidden">
+                    <div class="settings__done-top">
+                        <h3 class="settings__done-title example-center">Выполненные задачи</h3>
+                        <button class="settings__done-close" data-type="done-list-close">Закрыть</button>
+                    </div>
+                    <ul class="settings__done-list">
+                        <li class="settings__done-empty">Пока ничего нет...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>
+
